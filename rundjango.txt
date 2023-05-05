@@ -1,0 +1,21 @@
+MVT - Model - View - Templates
+
+Setup V-env
+Activate the env
+Install Django
+Create django project 
+Runserver
+
+Migrate
+Create a SuperUser
+Access Admin
+
+Showmigrattions
+
+create our DjangoApp
+Install it in settings.py file  
+views  + urls mappings
+Templates
+
+Models
+sqlmigrate *   ------ python manage.py sqlmigrate "App_name" 0001

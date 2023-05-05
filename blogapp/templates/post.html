@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block tittle %}Articles{% endblock %}
+
+
+{% block content %}
+        
+        
+      {%for article in articles %}
+      <p>{{article.tittle}}</p>
+      <p>written by <i>{{article.author}}</i> and posted <b>{{article.date}}</b></p>
+      <p>{{article.content}}</article></p>
+      {%endfor%}
+
+
+
+      {% for item in blogs  %}
+      <h1>{{ item.tittle }}</h1>
+      <h3>its written by {{ item.author }} on the {{ item.date }}</h3>
+      <p>{{ item.content }}</p>
+      {% endfor %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+<!-- 
+
+{% comment %} 
+
+{{}} - variable
+
+{%%} - tags
+        - for, -if, -else, -extends, -includes
+ {% endcomment %}
+
+
+<h1>first post header</h1>
+
+ -->
