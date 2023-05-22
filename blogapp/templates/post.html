@@ -4,16 +4,22 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% if tittle %} BlogB | {{tittle}} {%endif%}</title>
+        <title>BlogB | {{article.tittle}}</title>
 </head>
+
 <body>
-      {%for article in articles %}
-      <p>{{article.tittle}}</p>
-      <p>written by <i>{{article.author}}</i> and posted <b>{{article.date}}</b></p>
-      <p>{{article.content}}</article></p>
-      {%endfor%}
+
+    <h1>Post Fetched From the Database</h1>
+    <h3><a href="{% url 'create' %}">Click Here</a> To Create A Post</h3>
+    {%for post in posts %}
+        <h3><a href="{% url 'details' post.id %}">{{post.tittle}}</a></h3>
+        <p>Written by <i>{{post.author}}</i> and Posted on <b>{{post.date}}</b></p>
+        <p>{{post.content}}</p>
+        <br><br>
+    {%endfor%}
 </body>
 </html>
+
 
 
 

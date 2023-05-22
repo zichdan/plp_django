@@ -1,0 +1,15 @@
+<h1>Post No: {{ post.id }}</h1>
+
+<div>
+    <h3><a href="{% url 'details' post.id %}">{{ post.tittle }} ||</a></h3><br>
+    <h4>Author: {{ post.author }} || </h4><br>
+    <h4>Date: {{ post.date }} || </h4><br>
+    <h4>Content: {{ post.content }} || </h4><br>
+    <h4>Category: {{ post.category }} || </h4><br>
+    
+    <a href="{% url 'articles' %}">Go Back</a>
+    {% comment %} <a href="{{% url 'articles'%}}"></a> {% endcomment %}
+    {% comment %} <input type="text"> {% endcomment %}
+</div>
+
+
