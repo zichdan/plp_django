@@ -1,0 +1,28 @@
+# Save Data to Json
+python manage.py dumpdata > datadump.json
+
+# Sync New DB
+python manage.py migrate --run-syncdb
+
+# Exclude comtent type data
+> python manage.py shell
+
+> from djngo.contrib.contenttypes.models import ContentType 
+> ContentType.objects.all().delete()
+> quit()
+
+# Load Data from Json
+python manage.py loaddata datadump.json
+
+# Run Server
+python manage.py runserver
+
+
+# Run Server with Debug
+python manage.py runserver --settings=config.settings.local
+```
+## License
+
+
+
+

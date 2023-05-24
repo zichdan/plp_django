@@ -42,7 +42,7 @@ def articles_details(request, pk):
 def articles_create(request):
     if request.method == "POST":
         form = PostForm(request.POST)
-        if form.is_vaid():
+        if form.is_valid():
             form.save()
         return redirect(reverse('articles'))
     else:
@@ -61,14 +61,23 @@ def article_update(request, pk):
         form = PostForm(instance=post_obj, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect(reverse("details", args=[pk, ]))
+            return redirect(reverse("details", args=(pk,)))
     else:
         form = PostForm(instance=post_obj)
     context = {
         "form" : form,
         "object": post_obj
     }    
+    return render(request, 'create.html', context)
     
+def article_delete(request, pk):
+    post_obj = get_object_or_404(Post, pk=pk)
+    post_obj.delete()
+    
+    return redirect(reverse("articles"))
+    
+    
+
     
     
     

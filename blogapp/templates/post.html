@@ -15,7 +15,10 @@
         <h3><a href="{% url 'details' post.id %}">{{post.tittle}}</a></h3>
         <p>Written by <i>{{post.author}}</i> and Posted on <b>{{post.date}}</b></p>
         <p>{{post.content}}</p>
+        <h5><a href="{% url 'update' post.id %}">Update</a></h5>
+        <h5><a href="{% url 'delete' post.id %}">Delete</a></h5>
         <br><br>
+
     {%endfor%}
 </body>
 </html>
