@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BlogB | {{article.tittle}}</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
+{% block content %}
+     
+<h1>Post Fetched From the Database</h1>
+<h3><a href="{% url 'create' %}">Click Here</a> To Create A Post</h3>
+{%for post in posts %}
+    <h3><a href="{% url 'details' post.id %}">{{post.tittle}}</a></h3>
+   <div class="pst">
+    <p>Written by <i>{{post.author}}</i> and Posted on <b>{{post.date}}</b></p>
+    <p>{{post.content}}</p>
+   </div>
+    <h5><a href="{% url 'update' post.id %}">Update</a></h5>
+    <h5><a href="{% url 'delete' post.id %}">Delete</a></h5>
+    <br><br>
 
-    <h1>Post Fetched From the Database</h1>
-    <h3><a href="{% url 'create' %}">Click Here</a> To Create A Post</h3>
-    {%for post in posts %}
-        <h3><a href="{% url 'details' post.id %}">{{post.tittle}}</a></h3>
-        <p>Written by <i>{{post.author}}</i> and Posted on <b>{{post.date}}</b></p>
-        <p>{{post.content}}</p>
-        <h5><a href="{% url 'update' post.id %}">Update</a></h5>
-        <h5><a href="{% url 'delete' post.id %}">Delete</a></h5>
-        <br><br>
+{%endfor%}
 
-    {%endfor%}
+{% endblock content %}
+   
 </body>
 </html>
 

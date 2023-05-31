@@ -19,3 +19,16 @@ Templates
 
 Models
 sqlmigrate *   ------ python manage.py sqlmigrate "App_name" 0001
+
+
+
+# READ
+cripsy forms in django
+#READ 
+Bootsrap
+widget_tweaks
+
+
+
+
+
