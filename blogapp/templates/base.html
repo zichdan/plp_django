@@ -16,7 +16,7 @@
     <link
       rel="shortcut icon"
       type="image/png"
-      href="{% static 'images/logo_foter.png' %}"
+      href="{% static 'images/logo_footer.png' %}"
     />
 
     <!-- Include your CSS files here -->
@@ -38,15 +38,11 @@
   <body>
     <!--Header content-->
     {% include 'common/__header.html' %}
-    
 
     <main>
-        
-        {% block blockname %}
-         All body content for any page will be here
+        {% block content %}
             
-        {% endblock blockname %}
-            
+        {% endblock content %}
     </main>
     <br>
 
