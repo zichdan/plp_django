@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'blogapp',
     'account'
     # t?
+    # git
 ]
 
 MIDDLEWARE = [
